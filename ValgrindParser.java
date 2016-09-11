@@ -23,20 +23,17 @@ import java.io.IOException;
 
 public class ValgrindParser
 {
-    private static void printUsage ()
-    {
+    private static void printUsage () {
         System.out.println("ValgrindParser <file 1> [<file 2> <file n>]");
     }
 
-    private static void parseSuppressionsFromFile (String path, HashSet<String> suppressions)
-    {
+    private static void parseSuppressionsFromFile (String path, HashSet<String> suppressions) {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             boolean inSuppressionMode = false;
             StringBuilder builder = new StringBuilder ();
 
             String line = reader.readLine();
-            while(line != null)
-            {
+            while(line != null) {
                 if(line.startsWith("{")) {
                     inSuppressionMode = true;
                     // clear the suppressions buffer
@@ -67,10 +64,8 @@ public class ValgrindParser
     // args[0] existing suppressions file
     // args[1] file to parse
     // output: diff (non-existing) suppressions
-    public static void main (String[] args)
-    {
-        if(args.length < 1)
-        {
+    public static void main (String[] args) {
+        if(args.length < 1) {
             printUsage ();
             return;
         }
