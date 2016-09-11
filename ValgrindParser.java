@@ -61,9 +61,6 @@ public class ValgrindParser
         }
     }
 
-    // args[0] existing suppressions file
-    // args[1] file to parse
-    // output: diff (non-existing) suppressions
     public static void main (String[] args) {
         if(args.length < 1) {
             printUsage ();
