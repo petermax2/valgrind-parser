@@ -11,9 +11,9 @@ Since it is only one source file simply use `javac`:
 ## How to run
 
 The tool takes at least one file as input and parses it for valgrind suppressions.
-If more than one file is provided, the suppressions of each file are appended.
+If more than one file is provided, the suppressions of each file are concatenated.
 
-Every suppression is only written out once. Duplicates will be ignored.
+Every suppression is only written out once. Duplicates are ignored.
 
 ### Example
 
@@ -29,4 +29,4 @@ You can call the `valgrind-parser` like this:
 ## What exactly is parsed?
 
 The parser reads from the file until it finds a valgrind suppression, starting with "{" and ending with "}".
-Everything else will be ignored.
+Everything outside the suppressions is ignored.
