@@ -2,12 +2,6 @@
 
 Parse valgrind logs for suppressions.
 
-## How to Compile
-
-Since it is only one source file simply use `javac`:
-
-    javac ValgrindParser.java
-
 ## How to run
 
 The tool takes at least one file as input and parses it for valgrind suppressions.
@@ -24,7 +18,7 @@ Let's say you have two valgrind logs in your current working directory:
 
 You can call the `valgrind-parser` like this:
 
-    java ValgrindParser file1.log file2.log
+    python3 valgrind-parser.py file1.log file2.log
 
 ## What exactly is parsed?
 
